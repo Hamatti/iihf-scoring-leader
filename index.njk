@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koodiklinikan MM2024 Pistepörssiskaba</title>
+
+    <style>
+      main p {
+        max-width: 80ch;
+      }
+      body {
+        padding: 1em;
+      }
+      table {
+        max-width: 800px;
+        width: 90%;
+      }
+
+      thead {
+        font-weight: 900;
+      }
+
+      tbody tr:nth-child(2n + 1) {
+        background: #e5e5e5;
+      }
+
+      td {
+        padding: 0.5em 0.25em;
+      }
+
+      @media screen and (max-width: 600px) {
+        td {
+          padding: 0;
+        }
+
+        table {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Koodiklinikan MM2024 Pistepörssiskaba</h1>
+      <p>
+        Jääkiekon MM-kisoihin kultakin osallistuvalta
+        <a href="https://koodiklinikka.fi">Koodiklinikan</a> skabaajalta
+        pyydettiin pistepörssivoittoveikkaukset sekä Leijonista (🇫🇮) että
+        kaikista pelaajista (🌍) sekä näiden veikatut pistemäärät.
+      </p>
+
+      <p>
+        Tämä sivusto seuraa veikattujen pelaajien edesottamuksia. Sivusto
+        päivittyy noin suurin piirtein pelien päätyttyä ellei webmaster ole
+        katsomassa peliä pubissa.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Osallistuja</td>
+            <td>🇫🇮 / 🌍</td>
+            <td>Pelaaja (veikatut pisteet)</td>
+            <td>Maalit</td>
+            <td>Syötöt</td>
+            <td>Pisteet</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in scores %}
+          <tr>
+            <td>{{ row.participant }}</td>
+            <td>{{ row.flag }}</td>
+            <td>{{ row.player.name }} ({{ row.player.bet_points }})</td>
+            <td>{{ row.player.goals }}</td>
+            <td>{{ row.player.assists }}</td>
+            <td>{{ row.player.points }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

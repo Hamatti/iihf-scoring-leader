@@ -1,0 +1,46 @@
+[
+  {
+    "name": "V-V",
+    "finns": {
+      "name": "Jesse Puljujarvi",
+      "points": 15
+    },
+    "all": {
+      "name": "Jesse Puljujarvi",
+      "points": 15
+    }
+  },
+  {
+    "name": "Antti Peisa",
+    "finns": {
+      "name": "Mikael Granlund",
+      "points": 11
+    },
+    "all": {
+      "name": "Connor Bedard",
+      "points": 14
+    }
+  },
+  {
+    "name": "saapunki",
+    "finns": {
+      "name": "Olli Maatta",
+      "points": 11
+    },
+    "all": {
+      "name": "Lucas Raymond",
+      "points": 16
+    }
+  },
+  {
+    "name": "Juhis",
+    "finns": {
+      "name": "Olli Maatta",
+      "points": 11
+    },
+    "all": {
+      "name": "Maxim Strbak",
+      "points": 6
+    }
+  }
+]
