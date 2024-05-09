@@ -67,6 +67,15 @@ node _scripts/build.js
 
 This will generate `scores.json` which is used in the Eleventy site.
 
+### Tests
+
+To run tests, run
+
+```
+pip install pytest
+python -m pytest
+```
+
 ### Dev serve and building the site
 
 #### Prerequisites
