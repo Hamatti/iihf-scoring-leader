@@ -31,5 +31,16 @@
       "name": "Lucas Raymond",
       "points": 16
     }
+  },
+  {
+    "name": "pekka",
+    "finns": {
+      "name": "Hannes Bjorninen",
+      "points": 7
+    },
+    "all": {
+      "name": "Roman Josi",
+      "points": 14
+    }
   }
 ]
