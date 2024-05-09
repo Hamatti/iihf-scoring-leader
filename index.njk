@@ -46,7 +46,19 @@
           width: 100%;
         }
       }
+
+      @media screen and (prefers-color-scheme: dark) {
+        tbody tr:nth-child(2n + 1) {
+          background: #3d3a3a;
+        }
+
+        footer {
+          background: #3a352e;
+        }
+      }
     </style>
+
+    <meta name="color-scheme" content="light dark" />
   </head>
   <body>
     <main>
