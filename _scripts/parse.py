@@ -88,7 +88,7 @@ def parse_goals(soup):
     goals = []
     for event in events:
         title = event.css.select(".s-title")[0].text.strip()
-        if not "Goal!" in title:
+        if "Goal!" not in title:
             continue
 
         description = event.css.select(".s-description")[0].text.strip()
@@ -137,15 +137,17 @@ def parse_game(url):
 
 def store_game(game):
     games = None
-    with open("../_data/games.json", "r") as games_db:
-        games = json.load(games_db)
+    try:
+        with open("../_data/games.json", "r") as games_db:
+            games = json.load(games_db)
+    except FileNotFoundError:
+        games = []
 
-    if games is not None:
-        games.append(game)
+    games.append(game)
 
-        with open("../_data/games.json", "w") as games_db:
-            print(games)
-            games_db.write(json.dumps(games))
+    with open("../_data/games.json", "w") as games_db:
+        print(games)
+        games_db.write(json.dumps(games))
 
 
 if __name__ == "__main__":
