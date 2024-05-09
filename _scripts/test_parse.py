@@ -51,3 +51,16 @@ def test_goal_with_two_assists():
         and goal["assists"][1]
         == {"last": "Honzek", "first": "Samuel", "country": "Slovakia", "number": "27"}
     )
+
+
+def test_scorer_with_dash_in_name():
+    description = "#4 VITTASMAKI Veli-Matti scored for Finland."
+
+    goal = parse_details(description)
+
+    assert goal["goal"] == {
+        "last": "Vittasmaki",
+        "first": "Veli-Matti",
+        "country": "Finland",
+        "number": "4",
+    }
