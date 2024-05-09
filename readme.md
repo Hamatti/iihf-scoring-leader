@@ -2,6 +2,8 @@
 
 A website to show who's winning in [Koodiklinikka's](https://koodiklinikka.fi) Points Leader competition for IIHF World Championships.
 
+It's running live at [https://kk-mm2024.netlify.app/](https://kk-mm2024.netlify.app/).
+
 ## How to operate
 
 ### Prerequisites
