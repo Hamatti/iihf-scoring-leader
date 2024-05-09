@@ -12,8 +12,6 @@ let goals = raw_games.flatMap((game) => game.goals);
 let points = goals.reduce((acc, current) => {
   let goal = current.goal;
 
-  console.log(goal);
-
   let scorer_name = `${goal.first} ${goal.last}`;
   if (scorer_name in acc) {
     acc[scorer_name].goals += 1;
