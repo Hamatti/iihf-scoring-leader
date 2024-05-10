@@ -64,5 +64,16 @@
       "name": "Connor Bedard",
       "points": 12
     }
+  },
+  {
+    "name": "hetenho",
+    "finns": {
+      "name": "Mikael Granlund",
+      "points": 8
+    },
+    "all": {
+      "name": "Adrian Kempe",
+      "points": 11
+    }
   }
 ]
