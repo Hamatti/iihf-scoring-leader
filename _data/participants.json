@@ -75,5 +75,16 @@
       "name": "Adrian Kempe",
       "points": 11
     }
+  },
+  {
+    "name": "Arttu",
+    "finns": {
+      "name": "Mikko Lehtonen",
+      "points": 11
+    },
+    "all": {
+      "name": "Brady Tkachuk",
+      "points": 14
+    }
   }
 ]
