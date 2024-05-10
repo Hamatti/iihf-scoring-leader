@@ -119,5 +119,16 @@
       "name": "Trevor Zegras",
       "points": 15
     }
+  },
+  {
+    "name": "lehtu",
+    "finns": {
+      "name": "Valtteri Puustinen",
+      "points": 7
+    },
+    "all": {
+      "name": "Juraj Slafkovsky",
+      "points": 9
+    }
   }
 ]
