@@ -81,7 +81,6 @@
         <thead>
           <tr>
             <td>Osallistuja</td>
-            <td>🇫🇮 / 🌍</td>
             <td>Pelaaja (veikatut pisteet)</td>
             <td>Maalit</td>
             <td>Syötöt</td>
@@ -92,7 +91,6 @@
           {% for row in scores %} {% if row.flag == '🇫🇮' %}
           <tr>
             <td>{{ row.participant }}</td>
-            <td>{{ row.flag }}</td>
             <td>{{ row.player.name }} ({{ row.player.bet_points }})</td>
             <td>{{ row.player.goals }}</td>
             <td>{{ row.player.assists }}</td>
@@ -107,7 +105,6 @@
         <thead>
           <tr>
             <td>Osallistuja</td>
-            <td>🇫🇮 / 🌎</td>
             <td>Pelaaja (veikatut pisteet)</td>
             <td>Maalit</td>
             <td>Syötöt</td>
@@ -118,7 +115,6 @@
           {% for row in scores %} {% if row.flag == '🌎' %}
           <tr>
             <td>{{ row.participant }}</td>
-            <td>{{ row.flag }}</td>
             <td>{{ row.player.name }} ({{ row.player.bet_points }})</td>
             <td>{{ row.player.goals }}</td>
             <td>{{ row.player.assists }}</td>
