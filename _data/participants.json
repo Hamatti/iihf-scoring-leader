@@ -42,5 +42,27 @@
       "name": "Roman Josi",
       "points": 14
     }
+  },
+  {
+    "name": "Nevalainen",
+    "finns": {
+      "name": "Mikael Granlund",
+      "points": 8
+    },
+    "all": {
+      "name": "Adrian Kempe",
+      "points": 13
+    }
+  },
+  {
+    "name": "juhis",
+    "finns": {
+      "name": "Mikael Granlund",
+      "points": 8
+    },
+    "all": {
+      "name": "Connor Bedard",
+      "points": 12
+    }
   }
 ]
