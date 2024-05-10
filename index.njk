@@ -76,6 +76,7 @@
         katsomassa peliä pubissa.
       </p>
 
+      <h2>Suomen pörssi</h2>
       <table>
         <thead>
           <tr>
@@ -88,7 +89,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for row in scores %}
+          {% for row in scores %} {% if row.flag == '🇫🇮' %}
           <tr>
             <td>{{ row.participant }}</td>
             <td>{{ row.flag }}</td>
@@ -97,7 +98,33 @@
             <td>{{ row.player.assists }}</td>
             <td>{{ row.player.points }}</td>
           </tr>
-          {% endfor %}
+          {% endif %} {% endfor %}
+        </tbody>
+      </table>
+
+      <h2>Koko kisojen pörssi</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>Osallistuja</td>
+            <td>🇫🇮 / 🌎</td>
+            <td>Pelaaja (veikatut pisteet)</td>
+            <td>Maalit</td>
+            <td>Syötöt</td>
+            <td>Pisteet</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in scores %} {% if row.flag == '🌎' %}
+          <tr>
+            <td>{{ row.participant }}</td>
+            <td>{{ row.flag }}</td>
+            <td>{{ row.player.name }} ({{ row.player.bet_points }})</td>
+            <td>{{ row.player.goals }}</td>
+            <td>{{ row.player.assists }}</td>
+            <td>{{ row.player.points }}</td>
+          </tr>
+          {% endif %} {% endfor %}
         </tbody>
       </table>
     </main>
