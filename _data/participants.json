@@ -108,5 +108,16 @@
       "name": "Adrian Kempe",
       "points": 13
     }
+  },
+  {
+    "name": "Aksu",
+    "finns": {
+      "name": "Jere Innala",
+      "points": 10
+    },
+    "all": {
+      "name": "Trevor Zegras",
+      "points": 15
+    }
   }
 ]
