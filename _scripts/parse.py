@@ -91,6 +91,12 @@ def parse_goals(soup):
         if "Goal!" not in title:
             continue
 
+        time = event.css.select(".s-cell--time")[0].text
+
+        # Penaltie shootout goals don't count
+        if time == "65:00":
+            continue
+
         description = event.css.select(".s-description")[0].text.strip()
         goal = parse_details(description)
 
@@ -146,7 +152,6 @@ def store_game(game):
     games.append(game)
 
     with open("../_data/games.json", "w") as games_db:
-        print(games)
         games_db.write(json.dumps(games))
 
 
