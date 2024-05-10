@@ -97,5 +97,16 @@
       "name": "Trevor Zegras",
       "points": 13
     }
+  },
+  {
+    "name": "Henri",
+    "finns": {
+      "name": "Hannes Bjorninen",
+      "points": 10
+    },
+    "all": {
+      "name": "Adrian Kempe",
+      "points": 13
+    }
   }
 ]
