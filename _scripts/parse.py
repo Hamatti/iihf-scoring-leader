@@ -9,11 +9,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 
-TWO_ASSISTS = r"(#\d+ [A-Z]+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z]+ .*) and (#\d+ [A-Z]+ .*)\)\."
-ONE_ASSIST = r"(#\d+ [A-Z]+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z]+ .*)\)\."
-NO_ASSIST = r"(#\d+ [A-Z]+ .*) scored for (.*)\."
+TWO_ASSISTS = r"(#\d+ [A-Z']+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*) and (#\d+ [A-Z']+ .*)\)\."
+ONE_ASSIST = r"(#\d+ [A-Z']+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*)\)\."
+NO_ASSIST = r"(#\d+ [A-Z']+ .*) scored for (.*)\."
 
-PLAYER = r"#(\d+) ([A-Z ]+) (.*)"
+PLAYER = r"#(\d+) ([A-Z ']+) (.*)"
 
 
 def parse_details(description):
