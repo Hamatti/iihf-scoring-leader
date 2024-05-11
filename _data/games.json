@@ -565,5 +565,138 @@
         ]
       }
     ]
+  },
+  {
+    "home": "Great Britain",
+    "away": "Canada",
+    "date": "11 MAY 2024",
+    "goals": [
+      {
+        "goal": {
+          "country": "Great Britain",
+          "number": "28",
+          "first": "Ben",
+          "last": "O'Connor"
+        },
+        "assists": [
+          {
+            "country": "Great Britain",
+            "number": "14",
+            "first": "Liam",
+            "last": "Kirk"
+          },
+          {
+            "country": "Great Britain",
+            "number": "74",
+            "first": "Ollie",
+            "last": "Betteridge"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Canada",
+          "number": "98",
+          "first": "Connor",
+          "last": "Bedard"
+        },
+        "assists": [
+          {
+            "country": "Canada",
+            "number": "20",
+            "first": "Nick",
+            "last": "Paul"
+          },
+          {
+            "country": "Canada",
+            "number": "21",
+            "first": "Kaiden",
+            "last": "Guhle"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Canada",
+          "number": "98",
+          "first": "Connor",
+          "last": "Bedard"
+        },
+        "assists": [
+          {
+            "country": "Canada",
+            "number": "8",
+            "first": "Michael",
+            "last": "Bunting"
+          },
+          {
+            "country": "Canada",
+            "number": "3",
+            "first": "Olen",
+            "last": "Zellweger"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Canada",
+          "number": "38",
+          "first": "Brandon",
+          "last": "Hagel"
+        },
+        "assists": [
+          {
+            "country": "Canada",
+            "number": "3",
+            "first": "Olen",
+            "last": "Zellweger"
+          },
+          {
+            "country": "Canada",
+            "number": "80",
+            "first": "Pierre-Luc",
+            "last": "Dubois"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Canada",
+          "number": "8",
+          "first": "Michael",
+          "last": "Bunting"
+        },
+        "assists": [
+          {
+            "country": "Canada",
+            "number": "4",
+            "first": "Bowen",
+            "last": "Byram"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Great Britain",
+          "number": "14",
+          "first": "Liam",
+          "last": "Kirk"
+        },
+        "assists": [
+          {
+            "country": "Great Britain",
+            "number": "26",
+            "first": "Evan",
+            "last": "Mosey"
+          },
+          {
+            "country": "Great Britain",
+            "number": "91",
+            "first": "Ben",
+            "last": "Lake"
+          }
+        ]
+      }
+    ]
   }
 ]
