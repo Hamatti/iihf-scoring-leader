@@ -482,5 +482,88 @@
       }
     ]
   },
-  { "home": "Czechia", "away": "Finland", "date": "10 MAY 2024", "goals": [] }
+  { "home": "Czechia", "away": "Finland", "date": "10 MAY 2024", "goals": [] },
+  {
+    "home": "France",
+    "away": "Kazakhstan",
+    "date": "11 MAY 2024",
+    "goals": [
+      {
+        "goal": {
+          "country": "Kazakhstan",
+          "number": "84",
+          "first": "Kirill",
+          "last": "Savitskiy"
+        },
+        "assists": [
+          {
+            "country": "Kazakhstan",
+            "number": "65",
+            "first": "Samat",
+            "last": "Daniyar"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Kazakhstan",
+          "number": "23",
+          "first": "Maxim",
+          "last": "Mukhametov"
+        },
+        "assists": [
+          {
+            "country": "Kazakhstan",
+            "number": "28",
+            "first": "Valeriy",
+            "last": "Orekhov"
+          },
+          {
+            "country": "Kazakhstan",
+            "number": "84",
+            "first": "Kirill",
+            "last": "Savitskiy"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "Kazakhstan",
+          "number": "48",
+          "first": "Roman",
+          "last": "Starchenko"
+        },
+        "assists": [
+          {
+            "country": "Kazakhstan",
+            "number": "88",
+            "first": "Yevgeniy",
+            "last": "Rymarev"
+          }
+        ]
+      },
+      {
+        "goal": {
+          "country": "France",
+          "number": "27",
+          "first": "Enzo",
+          "last": "Cantagallo"
+        },
+        "assists": [
+          {
+            "country": "France",
+            "number": "29",
+            "first": "Louis",
+            "last": "Boudon"
+          },
+          {
+            "country": "France",
+            "number": "81",
+            "first": "Anthony",
+            "last": "Rech"
+          }
+        ]
+      }
+    ]
+  }
 ]
