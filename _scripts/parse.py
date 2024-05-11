@@ -105,6 +105,7 @@ def parse_goals(soup):
 
         goals.append(goal)
 
+    print(f"{len(goals)} scored")
     return goals
 
 
