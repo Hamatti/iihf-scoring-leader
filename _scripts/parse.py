@@ -156,6 +156,59 @@ def store_game(game):
         games_db.write(json.dumps(games))
 
 
+def parse_points_leaders(url):
+    driver = webdriver.Firefox()
+    driver.get(url)
+    WebDriverWait(driver, 10).until(
+        expected_conditions.presence_of_all_elements_located(
+            (By.CSS_SELECTOR, ".s-cell--rank")
+        )
+    )
+
+    html = driver.page_source
+    driver.quit()
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    scoring_leaders_table = soup.css.select(".s-table")[
+        3
+    ]  # 4th table is currently what we want
+    rows = scoring_leaders_table.css.select("tr.js-table-row")
+
+    leaders = []
+    for row in rows:
+        try:
+            rank = row.css.select(".s-cell--rank")[0].text.strip()
+        except IndexError:
+            continue
+        if rank == "1":
+            last, first = row.css.select(".s-cell--name")[0].text.strip().split(" ")
+            name = f"{first.title()} {last.title()}"
+            # breakpoint()
+            goals = row.css.select("td.s-cell--g")[0].text.strip()
+            assists = row.css.select("td.s-cell--a")[0].text.strip()
+            points = row.css.select("td.s-cell--pts")[0].text.strip()
+
+            leaders.append(
+                {"name": name, "goals": goals, "assists": assists, "points": points}
+            )
+    return leaders
+
+
+def store_leaders(leader):
+    leaders = None
+    try:
+        with open("../_data/leaders.json", "r") as leaders_db:
+            leaders = json.load(leaders_db)
+    except FileNotFoundError:
+        leaders = []
+
+    leaders.append(leader)
+
+    with open("../_data/leaders.json", "w") as leaders_db:
+        leaders_db.write(json.dumps(leaders))
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python parse.py [url]")
@@ -164,5 +217,9 @@ if __name__ == "__main__":
         print("The URL must be for an IIHF score sheet")
 
     game = parse_game(url)
-
     store_game(game)
+
+    leaders = parse_points_leaders(
+        "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
+    )
+    store_leaders(leaders)
