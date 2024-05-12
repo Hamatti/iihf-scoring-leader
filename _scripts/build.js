@@ -73,6 +73,8 @@ participants.forEach((participant) => {
   scores.push(all);
 });
 
-scores.sort((a, b) => b.player.points - a.player.points);
+scores.sort(
+  (a, b) => b.player.points - a.player.points || b.player.goals - a.player.goals
+);
 
 fs.writeFileSync("_data/scores.json", JSON.stringify(scores));
