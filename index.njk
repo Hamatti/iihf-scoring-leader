@@ -77,6 +77,30 @@
       </p>
 
       <h2>Leijonapörssi</h2>
+      <h3>Pistepörssin kärki</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Pelaaja</td>
+            <td>Maalit</td>
+            <td>Syötöt</td>
+            <td>Pisteet</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for player in finn_leaders %}
+          <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.goals }}</td>
+            <td>{{ player.assists }}</td>
+            <td>{{ player.points }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h3>Veikkaukset</h3>
       <table>
         <thead>
           <tr>
