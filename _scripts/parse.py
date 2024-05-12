@@ -9,11 +9,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 
-TWO_ASSISTS = r"(#\d+ [A-Z']+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*) and (#\d+ [A-Z']+ .*)\)\."
-ONE_ASSIST = r"(#\d+ [A-Z']+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*)\)\."
-NO_ASSIST = r"(#\d+ [A-Z']+ .*) scored for (.*)\."
+TWO_ASSISTS = r"(#\d+ [A-Z'-]+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*) and (#\d+ [A-Z']+ .*)\)\."
+ONE_ASSIST = r"(#\d+ [A-Z'-]+ .*) scored for (.*) \(Assisted by (#\d+ [A-Z']+ .*)\)\."
+NO_ASSIST = r"(#\d+ [A-Z'-]+ .*) scored for (.*)\."
 
-PLAYER = r"#(\d+) ([A-Z ']+) (.*)"
+PLAYER = r"#(\d+) ([A-Z '-]+) (.*)"
 
 
 def parse_details(description):
@@ -207,8 +207,8 @@ if __name__ == "__main__":
     if not url.startswith("https://www.iihf.com/en/events/"):
         print("The URL must be for an IIHF score sheet")
 
-    # game = parse_game(url)
-    # store_game(game)
+    game = parse_game(url)
+    store_game(game)
 
     leaders = parse_points_leaders(
         "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
