@@ -64,3 +64,15 @@ def test_scorer_with_dash_in_name():
         "country": "Finland",
         "number": "4",
     }
+
+
+def test_da_costa():
+    description = "#41 BELLEMARE Pierre-Edouard scored for France (Assisted by #14 da COSTA Stephane)."
+    goal = parse_details(description)
+
+    assert goal["assists"][0] == {
+        "last": "Costa",
+        "first": "Stephane",
+        "country": "France",
+        "number": "14",
+    }
