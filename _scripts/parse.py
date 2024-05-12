@@ -15,6 +15,9 @@ NO_ASSIST = r"(#\d+ [A-Z'-]+ .*) scored for (.*)\."
 
 PLAYER = r"#(\d+) ([A-Z '-]+) (.*)"
 
+SCORING_LEADERS_PAGE = "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
+SCORE_LEADERS_TABLE_INDEX = 3
+
 
 def parse_details(description):
     if match := re.match(TWO_ASSISTS, description):
@@ -170,9 +173,7 @@ def parse_points_leaders(url):
 
     soup = BeautifulSoup(html, "html.parser")
 
-    scoring_leaders_table = soup.css.select(".s-table")[
-        3
-    ]  # 4th table is currently what we want
+    scoring_leaders_table = soup.css.select(".s-table")[SCORE_LEADERS_TABLE_INDEX]
     rows = scoring_leaders_table.css.select("tr.js-table-row")
 
     leaders = []
@@ -184,7 +185,6 @@ def parse_points_leaders(url):
         if rank == "1":
             last, first = row.css.select(".s-cell--name")[0].text.strip().split(" ")
             name = f"{first.title()} {last.title()}"
-            # breakpoint()
             goals = row.css.select("td.s-cell--g")[0].text.strip()
             assists = row.css.select("td.s-cell--a")[0].text.strip()
             points = row.css.select("td.s-cell--pts")[0].text.strip()
@@ -210,7 +210,5 @@ if __name__ == "__main__":
     game = parse_game(url)
     store_game(game)
 
-    leaders = parse_points_leaders(
-        "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
-    )
+    leaders = parse_points_leaders(SCORING_LEADERS_PAGE)
     store_leaders(leaders)
