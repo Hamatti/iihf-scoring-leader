@@ -101,6 +101,31 @@
       </table>
 
       <h2>Koko kisojen pörssi</h2>
+
+      <h3>Pistepörssin kärki</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Pelaaja</td>
+            <td>Maalit</td>
+            <td>Syötöt</td>
+            <td>Pisteet</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for player in leaders %}
+          <tr>
+            <td>{{ player.name }}</td>
+            <td>{{ player.goals }}</td>
+            <td>{{ player.assists }}</td>
+            <td>{{ player.points }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h3>Veikkaukset</h3>
       <table>
         <thead>
           <tr>

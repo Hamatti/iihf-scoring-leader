@@ -195,16 +195,7 @@ def parse_points_leaders(url):
     return leaders
 
 
-def store_leaders(leader):
-    leaders = None
-    try:
-        with open("../_data/leaders.json", "r") as leaders_db:
-            leaders = json.load(leaders_db)
-    except FileNotFoundError:
-        leaders = []
-
-    leaders.append(leader)
-
+def store_leaders(leaders):
     with open("../_data/leaders.json", "w") as leaders_db:
         leaders_db.write(json.dumps(leaders))
 
@@ -216,8 +207,8 @@ if __name__ == "__main__":
     if not url.startswith("https://www.iihf.com/en/events/"):
         print("The URL must be for an IIHF score sheet")
 
-    game = parse_game(url)
-    store_game(game)
+    # game = parse_game(url)
+    # store_game(game)
 
     leaders = parse_points_leaders(
         "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
