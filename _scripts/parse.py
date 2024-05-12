@@ -2,6 +2,7 @@ import sys
 import re
 import json
 from collections import namedtuple
+from itertools import takewhile
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -17,6 +18,10 @@ PLAYER = r"#(\d+) ([A-Z '-]+) (.*)"
 
 SCORING_LEADERS_PAGE = "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
 SCORE_LEADERS_TABLE_INDEX = 3
+
+FINN_LEADERS_PAGE = (
+    "https://www.iihf.com/en/events/2024/wm/teams/statistics/45150/finland"
+)
 
 
 def parse_details(description):
@@ -200,15 +205,63 @@ def store_leaders(leaders):
         leaders_db.write(json.dumps(leaders))
 
 
+def parse_finn_leaders(url):
+    driver = webdriver.Firefox()
+    driver.get(url)
+    WebDriverWait(driver, 10).until(
+        expected_conditions.presence_of_all_elements_located(
+            (By.CSS_SELECTOR, ".m-player-stats-carousel")
+        )
+    )
+
+    html = driver.page_source
+    driver.quit()
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    players = soup.css.select(".m-player-stats-carousel .swiper-slide")
+    stats = []
+    for player_data in players:
+        last, first = player_data.css.select(".s-name")[0].text.strip().split(" ")
+        name = f"{first} {last.title()}"
+        role = player_data.css.select(".s-player-title")[0].text.strip()
+        if role == "Goalkeeper":
+            continue
+        stats_node = player_data.css.select(".s-point")
+        goals = int(stats_node[0].text.strip())
+        assists = int(stats_node[1].text.strip())
+        points = int(stats_node[2].text.strip())
+        stats.append(
+            {"name": name, "goals": goals, "assists": assists, "points": points}
+        )
+
+    stats = sorted(
+        stats, key=lambda player: (player["points"], player["goals"]), reverse=True
+    )
+    lead = stats[0]["points"]
+
+    return list(takewhile(lambda player: player["points"] >= lead, stats))
+
+
+def store_finn_leaders(leaders):
+    with open("../_data/finn_leaders.json", "w") as leaders_db:
+        leaders_db.write(json.dumps(leaders))
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python parse.py [url]")
+        sys.exit(1)
     url = sys.argv[1]
     if not url.startswith("https://www.iihf.com/en/events/"):
         print("The URL must be for an IIHF score sheet")
+        sys.exit(1)
 
     game = parse_game(url)
     store_game(game)
 
     leaders = parse_points_leaders(SCORING_LEADERS_PAGE)
     store_leaders(leaders)
+
+    finn_leaders = parse_finn_leaders(FINN_LEADERS_PAGE)
+    store_finn_leaders(finn_leaders)
