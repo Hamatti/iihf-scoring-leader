@@ -10,11 +10,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 
-TWO_ASSISTS = r"(#\d+ (?:[a-z]+ )?[A-Z'-]+ .*) scored for (.*) \(Assisted by (#\d+ (?:[a-z]+ )?[A-Z'-]+ .*) and (#\d+ (?:[a-z]+ )?[A-Z'-]+ .*)\)\."
-ONE_ASSIST = r"(#\d+ (?:[a-z]+ )?[A-Z'-]+ .*) scored for (.*) \(Assisted by (#\d+ (?:[a-z]+ )?[A-Z'-]+ .*)\)\."
-NO_ASSIST = r"(#\d+ (?:[a-z]+ )?[A-Z'-]+ .*) scored for (.*)\."
+TWO_ASSISTS = r"(#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*) scored for (.*) \(Assisted by (#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*) and (#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*)\)\."
+ONE_ASSIST = r"(#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*) scored for (.*) \(Assisted by (#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*)\)\."
+NO_ASSIST = r"(#\d+ (?:[a-z]+ )?[A-Za-z'-]+ .*) scored for (.*)\."
 
-PLAYER = r"#(\d+) (?:[a-z]+ )?([A-Z '-]+) (.*)"
+PLAYER = r"#(\d+) (?:[a-z]+ )?([A-Za-z '-]+) (.*)"
 
 SCORING_LEADERS_PAGE = "https://www.iihf.com/en/events/2024/wm/skaters/scoringleaders"
 SCORE_LEADERS_TABLE_INDEX = 3
