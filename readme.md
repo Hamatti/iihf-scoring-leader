@@ -111,3 +111,12 @@ which will generate `_site/index.html` that can be deployed to a webserver as a 
 The architecture of this is version "just put something together" and could probably be simpler and definitely more error-prone.
 
 But for something that lives for a couple of weeks during the competition, it's good enough.
+
+### Improvement ideas
+
+- Make the browser interactions such that it only opens one Firefox session and reads all three pages at once
+- Only get Finns stats if Finland played in a game being parsed
+- Make parser such that it can be run to update information (currently it just pushes a new entry to the array)
+- Add an "updated after" field to let readers know which games have been parsed
+- Use the JSON API instead of parsing HTML
+- Make the name handling somehow better (it kinda breaks with names like McCANN -> Mccann or da Costa -> Costa)
