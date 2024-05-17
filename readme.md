@@ -120,3 +120,4 @@ But for something that lives for a couple of weeks during the competition, it's 
 - Add an "updated after" field to let readers know which games have been parsed
 - Use the JSON API instead of parsing HTML
 - Make the name handling somehow better (it kinda breaks with names like McCANN -> Mccann or da Costa -> Costa)
+- Build a better interface for running the scripts (through `package.json` for example)
